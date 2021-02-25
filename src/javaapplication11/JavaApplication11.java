@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package javaapplication11;
+import java.util.Scanner;
 
 /**
  *
@@ -17,6 +18,7 @@ public class JavaApplication11 {
      */
     Seasons season;
     private boolean abc=true;
+    private String myStr;
     public enum Seasons{
         FALL,
         WINTER,
@@ -28,6 +30,7 @@ public class JavaApplication11 {
     {
         this.season = season;
     }
+    
    
     public void seasonDescription()
     {
@@ -46,10 +49,32 @@ public class JavaApplication11 {
                 break;
      }
     }
+    
+    public boolean isSeason(){
+    
+        if(myStr == "FALL"){
+            return true;
+        }
+        else if(myStr == "WINTER"){
+        return true;
+        }
+        else if(myStr == "SPRING"){
+        return true;
+        }
+        else if(myStr == "SUMMER"){
+        return true;
+        }
+        else 
+            return false;
+    }
     public static void main(String[] args) {
         // TODO code application logic here
         // try to get the input (myStr) from the user
-        String myStr= "SUMMER";
+        
+        Scanner input = new Scanner(System.in);
+        String myStr;
+        myStr = input.nextLine();
+        
         JavaApplication11 test1= new JavaApplication11(Seasons.valueOf(myStr));
         test1.seasonDescription();
         //test1.isSeason();
